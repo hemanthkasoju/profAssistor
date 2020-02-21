@@ -1,1 +1,34 @@
-HIIIIIII
+<html>
+<title> Add Questions </title>
+<body>
+<form action = "/addQuestions/" method = "post">
+	{% csrf_token %}
+	<a href="/accounts/register"> Register </a><br><br>
+	<label for="Q">Question:</label><br>
+	<textarea id="Q" name = "question" rows="5" cols="50">
+	</textarea><br><br>
+	<label for="T">Time:</label><br>
+	<input type="number" name="time" value="" id="T"><br><br>
+	<label for="D">Difficulty:</label><br>
+	<input type= "number" name="difficulty" value="" id="D"><br><br>
+	<label for="M">Marks:</label><br>
+	<input type= "number" name="marks" value="" id="M"><br><br>
+	<label for="C">Chapter:</label><br>
+	<select id="C" name = "chapter">
+	  <option value="1">Chapter 1</option>
+	  <option value="2">Chapter 2</option>
+	  <option value="3">Chapter 3</option>
+	  <option value="4">Chapter 4</option>
+	  <option value="5">Chapter 5</option>
+	</select><br><br>
+
+	<label for="I">Important:</label><br>
+	<select id="I" name = "important">
+	  <option value="True">Yes</option>
+	  <option value= "False">No</option>
+	</select><br><br>
+	<input type="submit" name:"submit" value="submit"><br>
+
+</form>
+</body>
+<html>

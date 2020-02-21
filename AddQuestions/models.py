@@ -7,5 +7,6 @@ class Question(models.Model):
     isImportant=models.BooleanField(default=False)
     chapter=models.IntegerField()
     time=models.IntegerField()
+    repeated = models.IntegerField()
 
 # Create your models here.
