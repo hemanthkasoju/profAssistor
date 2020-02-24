@@ -4,7 +4,7 @@ from .models import Question
 
 def addQuestions(request) :
 
-    if request.method =='POST' :
+    if request.method == 'POST':
 
         print("###################################")
         print(request.POST)
@@ -12,14 +12,14 @@ def addQuestions(request) :
         marks = request.POST['marks']
         difficulty = request.POST['difficulty']
         isImportant = request.POST['important']
-        chapter = request.POST['chapter']
+        chapter: object = request.POST['chapter']
         time = request.POST['time']
         repeated = 0
 
-        questionData = Question(question = question, marks = marks, difficulty = difficulty, isImportant = isImportant, chapter = chapter, time = time, repeated = repeated)
+        questionData = Question(question=question, marks=marks, difficulty=difficulty, isImportant=isImportant, chapter=chapter, time=time, repeated=repeated)
 
         questionData.save()
         print("Question added to database")
         return redirect('/addQuestions/')
-    else :
+    else:
         return render(request, 'addQuestions.html')

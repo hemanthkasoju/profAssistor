@@ -4,6 +4,8 @@
 <form action = "/addQuestions/" method = "post">
 	{% csrf_token %}
 	<a href="/accounts/register"> Register </a><br><br>
+    <a href="/accounts/login"> login </a><br><br>
+    <a href="/accounts/automatic">automatic</a><br><br>
 	<label for="Q">Question:</label><br>
 	<textarea id="Q" name = "question" rows="5" cols="50">
 	</textarea><br><br>
@@ -15,11 +17,11 @@
 	<input type= "number" name="marks" value="" id="M"><br><br>
 	<label for="C">Chapter:</label><br>
 	<select id="C" name = "chapter">
-	  <option value="1">Chapter 1</option>
-	  <option value="2">Chapter 2</option>
-	  <option value="3">Chapter 3</option>
-	  <option value="4">Chapter 4</option>
-	  <option value="5">Chapter 5</option>
+	  <option value="1">Python</option>
+	  <option value="2">Java</option>
+	  <option value="3">JavaScript</option>
+	  <option value="4">PHP</option>
+	  <option value="5">HTML</option>
 	</select><br><br>
 
 	<label for="I">Important:</label><br>
@@ -27,8 +29,8 @@
 	  <option value="True">Yes</option>
 	  <option value= "False">No</option>
 	</select><br><br>
-	<input type="submit" name:"submit" value="submit"><br>
+	<input type="submit" name="submit" value="submit"><br>
 
 </form>
 </body>
-<html>
+</html>
