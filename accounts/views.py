@@ -4,13 +4,6 @@ from django.contrib.auth.models import User, auth
 
 
 # Create your views here.
-def automatic(request):
-    if request.method == 'POST':
-        time = request.POST['time']
-        difficulty = request.POST['difficulty']
-        chapter = request.POST['chapter']
-
-
 
 def login(request):
     if request.method == 'POST':

@@ -2,7 +2,9 @@
 <body>
 <form action="login" method="post">
     {% csrf_token %}
-
+    <a href="/accounts/register"> Register </a><br><br>
+    <a href="/accounts/login"> login </a><br><br>
+    <a href="/generateQuestionPaper/selectQuestionPreference">Select Preference</a><br><br>
   <input type="text" name="username" value=""  placeholder="Username"><br><br>
   <input type="password" name="password" value=""  placeholder="Password"><br><br>
     <input type="submit">

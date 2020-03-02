@@ -4,5 +4,4 @@ from .import views
 urlpatterns = [
     path("register", views.register, name="register"),
     path("login", views.login, name="login"),
-    path("automatic", views.automatic, name="automatic"),
 ]

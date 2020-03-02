@@ -1,16 +1,19 @@
 <html>
 <body>
-<form action="automatic.html" method="POST">
-
-
+<form action="selectQuestionPreference" method="POST">
     <label for="T">Time:</label><br>
 	<input type="number" name="time" value="" id="T"><br><br>
     <label for="D"> Difficulty</label><br>
     <input type= "number" name="difficulty" value="" id="D"><br><br>
 	<label for="M">Marks:</label><br>
-    <input type= "number" name="Marks" value="" id="M"><br><br>
+    <input type= "number" name="marks" value="" id="M"><br><br>
     <input type="submit">
 </form>
+
+{% for question in questions %}
+    {{ question.question }}<br><br>
+{% endfor %}
+
 <div>
 
 </div>
