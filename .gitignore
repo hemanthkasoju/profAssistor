@@ -1,0 +1,5 @@
+#cache file #
+__pycache__/
+
+#ignore specific files#
+profAssistor/settings.py
