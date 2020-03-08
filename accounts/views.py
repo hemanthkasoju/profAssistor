@@ -12,7 +12,7 @@ def login(request):
         user = auth.authenticate(username=username, password=password)
         if user is not None:
             auth.login(request, user)
-            return redirect('/addQuestions/')
+            return render(request, 'addQuestions.html')
         else:
             messages.info(request, 'invalid credentials')
             return redirect('login')
@@ -31,10 +31,13 @@ def register(request):
         confirmPassword = request.POST['confirmPassword']
         if password == confirmPassword:
             if User.objects.filter(username=username).exists():
+                print("Usernametaken")
                 messages.info(request, 'Username Taken')
                 return redirect('register')
-            elif User.objects.filter(email=email).exists():
+            if User.objects.filter(email=email).exists():
                 messages.info(request, 'Email already registered')
+                return redirect('register')
+
             else:
                 user = User.objects.create_user(username=username, password=password, email=email, first_name=firstName,
                                                 last_name=lastName)
@@ -42,7 +45,12 @@ def register(request):
                 print("User created")
                 return redirect('login')
         else:
-            print('password not matching')
+            messages.info(request, 'Password not matching')
             return redirect('register')
     else:
         return render(request, 'register.html')
+
+def logout(request):
+    auth.logout(request)
+    return redirect('login')
+
