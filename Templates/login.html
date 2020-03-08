@@ -1,3 +1,4 @@
+<!--
 <html>
 <body>
 <form action="login" method="post">
@@ -16,3 +17,58 @@
 </div>
 </body>
 </html>
+-->
+{% load static%}
+<html>
+  <head>
+      <title> Login and Registration</title>
+      <!--<link rel="stylesheet" type="text/css" href="{% static 'styles/style.css' %}">-->
+    <body>
+      <div class="hero">
+        <div class="form-box">
+          <div class="button-box">
+            <div id="btn">
+                <button type="button" class="toggle-btn" onclick="login()">Log In </button>
+                <button type="button" class="toggle-btn" onclick="Register()">Register</button>
+            </div>
+
+           <form id="login" class="input-group" action="login" method="post">
+             <input type="text" class="input-field" placeholder="User Id" required><br>
+             <input type="text" class="input-field" placeholder="Enter Password" required><br>
+             <input type="checkbox" class="checkbox"><span>Remember Password</span>
+             <button type="submit" class="submit-btn">Log In</button>
+           </form>
+            <form id="Register" class="input-group" action="register" method="post">
+               <input type="text" class="input-field" placeholder="Username" required><br>
+               <input type="text" class="input-field" placeholder="First Name" required><br>
+                <input type="text" class="input-field" placeholder="Last Name" required><br>
+                <input type="email" class="input-field" placeholder="Email Id" required><br>
+               <input type="checkbox" class="checkbox"><span>I accept the terms & conditions</span>
+                <button type="submit" class="submit-btn">Register</button>
+            </form>
+          </div>
+        </div>
+      </div>
+       <script>
+         var x= document.getElementById("login");
+           var y= document.getElementById("Register");
+           var z= document.getElementById("btn");
+           function Register() {
+            x.style.left="-400px";
+            y.style.left="50px";
+            z.style.left="110px";
+            }
+         function login(){
+         x.style.left="50px";
+         y.style.left="450px";
+         z.style.left="0px";
+         }
+       </script>
+    </body>
+  </head>
+  <div>
+      {% for message in messages %}
+      <h3>{{message}}</h3>
+      {% endfor %}
+  </div>
+ </html>

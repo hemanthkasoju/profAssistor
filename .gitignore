@@ -3,6 +3,3 @@ __pycache__/
 
 #ignore specific files#
 profAssistor/settings.py
-
-#ignore static files#
-/static
