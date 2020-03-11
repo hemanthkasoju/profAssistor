@@ -82,7 +82,11 @@ DATABASES = {
         'NAME': 'profAssist',
         'USER':'postgres',
         'PASSWORD':'0711',
-        'HOST':'localhost',
+
+        # 'NAME': 'profAssistor',
+        # 'USER':'postgres',
+        # 'PASSWORD':'Mohan@85',
+        # 'HOST':'localhost',
         }
 }
 

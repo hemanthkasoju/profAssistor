@@ -2,4 +2,4 @@
 __pycache__/
 
 #ignore specific files#
-profAssistor/settings.py
+#profAssistor/settings.py
