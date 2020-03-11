@@ -12,7 +12,7 @@ def login(request):
         user = auth.authenticate(username=username, password=password)
         if user is not None:
             auth.login(request, user)
-            return redirect('/addQuestions/')
+            return redirect('addQuestions')
         else:
             messages.info(request, 'invalid credentials')
             return redirect('login')
@@ -45,4 +45,9 @@ def register(request):
             print('password not matching')
             return redirect('register')
     else:
-        return render(request, 'register.html')
+        return render(request, 'register')
+
+
+
+
+

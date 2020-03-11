@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 
 from .models import Question
 
-def addQuestions(request) :
+def addQuestions(request):
 
     if request.method == 'POST':
 
@@ -23,3 +23,7 @@ def addQuestions(request) :
         return redirect('/addQuestions/')
     else:
         return render(request, 'addQuestions.html')
+
+
+
+
