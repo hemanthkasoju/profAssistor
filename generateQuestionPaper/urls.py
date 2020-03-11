@@ -3,5 +3,5 @@ from . import views
 
 urlpatterns = [
 
-    path('selectQuestionPreference/', views.selectQuestionPreference, name='selectQuestionPreference'),
+    path('selectQuestionPreference', views.selectQuestionPreference, name='selectQuestionPreference'),
 ]

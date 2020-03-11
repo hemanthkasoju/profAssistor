@@ -9,3 +9,5 @@ class Question(models.Model):
     chapter = models.IntegerField()
     time = models.IntegerField()
     repeated = models.IntegerField()
+    isSelected = models.BooleanField(default=False)
+    courseID = models.TextField()

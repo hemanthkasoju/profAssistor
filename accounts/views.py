@@ -1,9 +1,8 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth.models import User, auth
+from .models import ProfessorCourses
 
-
-# Create your views here.
 
 def login(request):
     if request.method == 'POST':
@@ -12,7 +11,7 @@ def login(request):
         user = auth.authenticate(username=username, password=password)
         if user is not None:
             auth.login(request, user)
-            return render(request, 'addQuestions.html')
+            return render(request, 'profHomePage.html')
         else:
             messages.info(request, 'invalid credentials')
             return redirect('login')
@@ -31,7 +30,7 @@ def register(request):
         confirmPassword = request.POST['confirmPassword']
         if password == confirmPassword:
             if User.objects.filter(username=username).exists():
-                print("Usernametaken")
+                print("Username taken")
                 messages.info(request, 'Username Taken')
                 return redirect('register')
             if User.objects.filter(email=email).exists():
@@ -50,7 +49,25 @@ def register(request):
     else:
         return render(request, 'register.html')
 
+
 def logout(request):
     auth.logout(request)
     return redirect('login')
 
+
+def createCourse(request):
+    if request.method == 'POST':
+        courseID = request.POST['courseID']
+        courseName = request.POST['courseName']
+        description = request.POST['description']
+        courseData = ProfessorCourses()
+
+        courseData.save()
+        print("Course added to database")
+        return redirect('profHomePage')
+    else:
+        return render(request, "createCourse.html")
+
+
+def profHomePage(request):
+    return render(request, "profHomePage.html")

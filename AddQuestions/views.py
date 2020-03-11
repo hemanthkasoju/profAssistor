@@ -6,7 +6,6 @@ def addQuestions(request) :
 
     if request.method == 'POST':
 
-        print("###################################")
         print(request.POST)
         question = request.POST['question']
         marks = request.POST['marks']
