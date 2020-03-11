@@ -78,15 +78,15 @@ WSGI_APPLICATION = 'profAssistor.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'profAssist',
-        'USER':'postgres',
-        'PASSWORD':'0711',
-
-        # 'NAME': 'profAssistor',
+        # 'ENGINE': 'django.db.backends.postgresql',
+        # 'NAME': 'profAssist',
         # 'USER':'postgres',
-        # 'PASSWORD':'Mohan@85',
-        # 'HOST':'localhost',
+        # 'PASSWORD':'0711',
+
+        'NAME': 'profAssistor',
+        'USER':'postgres',
+        'PASSWORD':'Mohan@85',
+        'HOST':'localhost',
         }
 }
 
@@ -128,8 +128,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIR = [
-    os.path.join(BASE_DIR, "static")
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+    '/profAssistor/static'
+
 ]
 
 STATIC_ROOT = os.path.join(BASE_DIR, "assets")
