@@ -1,7 +1,12 @@
 <html>
 <title> Add Questions </title>
 <body>
-<form action = "/addQuestions/" method = "post">
+    {% if user.is_authenticated %}
+        Hi, {{ user.first_name }}
+        <a href="/accounts/logout"> Logout </a><br><br>
+    {% endif %}
+
+<form action = "addQuestions" method = "post">
 	{% csrf_token %}
 
 	<label for="Q">Question:</label><br>

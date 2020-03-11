@@ -1,0 +1,24 @@
+<html>
+<title>  </title>
+<body>
+    {% if user.is_authenticated %}
+        Hi, {{ user.first_name }}
+        <a href="/accounts/logout"> Logout </a><br><br>
+    {% endif %}
+
+<form action = "/accounts/createCourse" method = "post">
+	{% csrf_token %}
+
+	<label for="ID">Course ID :</label><br>
+	<input type="text" name="courseID" value="" id="ID"><br><br>
+
+    <label for="name">Course Name :</label><br>
+	<input type= "text" name="courseName" value="" id="name"><br><br>
+	<label for="desc">Description :</label><br>
+	<input type= "text" name="description" value="" id="desc"><br><br>
+
+	<input type="submit" name="Create course" value="submit"><br>
+
+</form>
+</body>
+</html>
