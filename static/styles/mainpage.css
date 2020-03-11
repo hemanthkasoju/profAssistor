@@ -22,6 +22,6 @@ header {
 .main-nav li active a{
    border: 1px solid white;
 }
-.main-nav li active a:hover{
+.main-nav li active a: hover{
     border: 1px solid white;
 }
