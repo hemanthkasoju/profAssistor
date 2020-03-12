@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
-
 from .models import Question
+
 
 def addQuestions(request):
 

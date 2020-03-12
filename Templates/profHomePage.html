@@ -9,10 +9,9 @@
 
 <a href="/accounts/createCourse"> Create course </a><br><br>
 
-<a href="/AddQuestions/addQuestions"> Course </a><br><br>
-
-<a href="/AddQuestions/addQuestions"> Course </a><br><br>
-
+{% for profCourse in profCourses %}
+    <a href="/AddQuestions/addQuestions"> {{ profCourse.courseID }} </a><br><br>
+{% endfor %}
 
 </body>
 </html>
