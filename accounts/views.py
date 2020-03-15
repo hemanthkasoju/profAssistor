@@ -76,3 +76,7 @@ def profHomePage(request):
     print(userID)
     profCourses = ProfessorCourses.objects.filter(user_id=userID)
     return render(request, "profHomePage.html", {'profCourses': profCourses})
+
+
+def course(request, courseID):
+    return redirect('')

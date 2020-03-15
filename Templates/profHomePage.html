@@ -10,8 +10,13 @@
 <a href="/accounts/createCourse"> Create course </a><br><br>
 
 {% for profCourse in profCourses %}
-    <a href="/AddQuestions/addQuestions"> {{ profCourse.courseID }} </a><br><br>
+    <form action = "AddQuestions/addQuestions" method = "post">
+	{% csrf_token %}
+
+	<input type="hidden" name="courseID" value= {{ profCourse.courseID }}><br><br>
+	<input type="submit" name= {{ profCourse.courseName }} value={{ profCourse.courseName }}><br>
 {% endfor %}
+
 
 </body>
 </html>
