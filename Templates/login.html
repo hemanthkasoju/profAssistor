@@ -37,9 +37,10 @@
                 <input type="email" class="input-field" placeholder="Email Id" name="email"required><br>
                 <input type="text" class="input-field" value=""  placeholder="Password" name="password" required><br>
                  <input type="text" class="input-field" value=""  placeholder="Confirm Password" name="confirmPassword"required><br>
-                 <input type="checkbox" class="checkbox" required>I accept the terms & conditions
-                 <button type="submit" class="submit-btn">Register</button><br>
-                <div>
+                 <input type="checkbox" class="checkbox"><span>I accept the terms & conditions</span>
+                <button type="submit" class="submit-btn">Register</button>
+
+                  <div>
                       {% for message in messages %}
                       <h3>{{message}}</h3>
                       {% endfor %}

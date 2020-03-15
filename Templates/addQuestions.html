@@ -1,65 +1,65 @@
 {% load static %}
 <html>
 <head>
-	<title> Add Questions </title>
-         <link rel="stylesheet" href="{% static 'styles/style.css' %}">
-
+    <title> Add Questions </title>
+    <link rel="stylesheet" href="{% static 'styles/style.css' %}"/>
 </head>
-<body>
-
-       <div class="hero">
-		   {% if user.is_authenticated %}
-	    Hi, {{ user.first_name }}
+<a href="/accounts/logout"> Logout </a><br><br>
+<form action="addQuestions" method="post">
+    {% csrf_token %}
+    <div class="hero">
+        {% if user.is_authenticated %}
+        Hi, {{ user.first_name }}
         <a href="/accounts/logout" class="lout"> Logout </a><br><br>
-    {% endif %}
-         <div class="row">
-             <ul class="main-nav">
-				  <li class="active"> <a href= "" > Home </a></li>
-				  <li><a href= "/accounts/createCourse" class="active"> Create Course </a></li>
-                   <li><a href="/AddQuestions/addQuestions"> Add Questions </a></li>
-				    <li><a href= "" > Automatic </a></li>
-				     <li><a href=""> Random</a></li>
-                   <li class="active"><a href="/accounts/logout"> Logout </a>
-             </ul>
-         </div>
+        {% endif %}
+        <div class="row">
+            <ul class="main-nav">
+                <li class="active"><a href=""> Home </a></li>
+                <li><a href="/accounts/createCourse" class="active"> Create Course </a></li>
+                <li><a href="/AddQuestions/addQuestions"> Add Questions </a></li>
+                <li><a href=""> Automatic </a></li>
+                <li><a href=""> Random</a></li>
+                <li class="active"><a href="/accounts/logout"> Logout </a>
+            </ul>
+        </div>
 
-	   <div class="form-box">
-		   <form action = "addQuestions" method = "post" class="input-group">
-	          {% csrf_token %}
-               <label for="T"> Question</label>
-			   <textarea id="T" placeholder="Question" name = "question" rows="5" cols="50"required> </textarea><br><br>
+        <div class="form-box">
+            <form action="addQuestions" method="post" class="input-group">
+                {% csrf_token %}
+                <label for="T"> Question</label>
+                <textarea id="T" placeholder="Question" name="question" rows="5" cols="50" required> </textarea><br><br>
 
-	           <input type="number" name="time" value="" placeholder="Time" required><br><br>
-			   <label for="T"> </label>
-			   <label for="D">Difficulty</label><br>
-			   <select id="D"name="difficulty"placeholder="Difficulty"><br><br>
-				   <option value="1">Very Easy</option>
-	               <option value="2">Easy</option>
-	               <option value="3">Moderate</option>
-	               <option value="4">Difficult</option>
-	               <option value="5">Very Difficult</option>
-			   </select><br><br>
-			   <input type= "text" name="marks" placeholder="Marks" ><br><br>
-	           <select  name = "chapter">Chapter
-	           <option value="1">Python</option>
-	           <option value="2">Java</option>
-	           <option value="3">JavaScript</option>
-	           <option value="4">PHP</option>
-	           <option value="5">HTML</option>
-	           </select><br><br>
-	           <label for="I">Important:</label><br>
-	           <select id="I" name = "important">
-				   <option value="True">Yes</option>
-	               <option value= "False">No</option>
-	            </select><br><br>
-	            <input type="submit" name="submit" value="submit" class="btn-one"><br><br>
-			     <div>
+                <input type="number" name="time" value="" placeholder="Time" required><br><br>
+                <label for="T"> </label>
+                <label for="D">Difficulty</label><br>
+                <select id="D" name="difficulty" placeholder="Difficulty"><br><br>
+                    <option value="1">Very Easy</option>
+                    <option value="2">Easy</option>
+                    <option value="3">Moderate</option>
+                    <option value="4">Difficult</option>
+                    <option value="5">Very Difficult</option>
+                </select><br><br>
+                <input type="text" name="marks" placeholder="Marks"><br><br>
+                <select name="chapter">Chapter
+                    <option value="1">Python</option>
+                    <option value="2">Java</option>
+                    <option value="3">JavaScript</option>
+                    <option value="4">PHP</option>
+                    <option value="5">HTML</option>
+                </select><br><br>
+                <label for="I">Important:</label><br>
+                <select id="I" name="important">
+                    <option value="True">Yes</option>
+                    <option value="False">No</option>
+                </select><br><br>
+                <input type="submit" name="submit" value="submit" class="btn-one"><br><br>
+                <div>
                     {% for message in messages %}
-                     <h3>{{message}}</h3>
-                     {% endfor %}
-	             </div>
-		   </form>
-       </div>
-   </div>
-</body>
+                    <h3>{{message}}</h3>
+                    {% endfor %}
+                </div>
+            </form>
+        </div>
+    </div>
+</form>
 </html>

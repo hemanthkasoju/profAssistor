@@ -12,7 +12,7 @@ def login(request):
         if user is not None:
             auth.login(request, user)
 
-            return render(request, 'profHomePage.html')
+            return redirect('profHomePage')
 
         else:
             messages.info(request, 'invalid credentials')
@@ -49,8 +49,7 @@ def register(request):
             messages.info(request, 'Password not matching')
             return redirect('register')
     else:
-
-        return render(request, 'register.html')
+        return render(request, 'login.html')
 
 
 def logout(request):
@@ -60,17 +59,23 @@ def logout(request):
 
 def createCourse(request):
     if request.method == 'POST':
-        courseID = request.POST['courseID']
-        courseName = request.POST['courseName']
-        description = request.POST['description']
-        courseData = ProfessorCourses()
+        ProfessorCourses.objects.create(courseID=request.POST['courseID'],
+                                        user_id=request.user.id,
+                                        courseName=request.POST['courseName'],
+                                        courseDescription=request.POST['description'])
 
-        courseData.save()
-        print("Course added")
+        print("Course added to database")
         return redirect('profHomePage')
     else:
         return render(request, "createCourse.html")
 
 
 def profHomePage(request):
-    return render(request, "profHomePage.html")
+    userID = request.user.id
+    print(userID)
+    profCourses = ProfessorCourses.objects.filter(user_id=userID)
+    return render(request, "profHomePage.html", {'profCourses': profCourses})
+
+
+def course(request, courseID):
+    return redirect('')

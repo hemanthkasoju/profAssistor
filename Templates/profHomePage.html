@@ -1,23 +1,24 @@
 {% load static %}
-<html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-        <title>Home</title>
-        <link rel="stylesheet" href="{% static 'styles/style.css' %}">
+    <title>Home</title>
+    <link rel="stylesheet" href="{% static 'styles/style.css' %}">
 </head>
- <body>
-      <header>
+<body>
+<a href="/accounts/logout"> Logout </a><br><br>
 
-          <div class="hero">
-              <h3> Create Course </h3>
-              <div class="button">
-              <a href="/accounts/createCourse" class="btn btn-one">Add</a>
-                  <div class="lout"><a href="/accounts/logout"> Logout </a></div><br><br>
-                  <a href="/AddQuestions/addQuestions">Course1 </a></li><br><br>
-                  <a href="/AddQuestions/addQuestions">Course2 </a></li>
-                  </div>
-              </div>
-      </header>
- </body>
+<a href="/accounts/createCourse"> Create course </a><br><br>
+
+{% for profCourse in profCourses %}
+<form action="AddQuestions/addQuestions" method="post">
+    {% csrf_token %}
+
+    <input type="hidden" name="courseID" value={{ profCourse.courseID }}><br><br>
+    <input type="submit" name={{ profCourse.courseName }} value={{ profCourse.courseName }}><br>
+    {% endfor %}
+</form>
+
+
+</body>
 </html>
