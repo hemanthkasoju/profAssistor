@@ -13,8 +13,8 @@ padding:0;
 
 }
 .form-box {
-    width: 380px;
-    height: 550px;
+    width: 390px;
+    height: 600px;
     position: relative;
     margin: 6% auto;
     background: #fff;
@@ -58,10 +58,9 @@ padding:0;
     border-radius: 50%;
 }
 .input-group{
-    top: 150px;
+    top: 100px;
     position: absolute;
     width: 280px;
-    transition: .5s;
 }
 .input-field{
     width: 300px;
@@ -180,4 +179,94 @@ span{
     width:100%;
     margin-top: -20px;
     padding-left: 50px;
+}
+header {
+	background-image: linear-gradient(rbga(0,0,0,0.5), rgba(0,0,0,0.5)), url("banner.jpg");
+	height: 100vh;
+	background-size: cover;
+	background-position: center;
+}
+.main-nav{
+      float:right;
+      list-style: none;
+      margin-top: 30px;
+}
+.main-nav li{
+       display: inline-block;
+}
+.main-nav li a{
+    color: #fff;
+    text-decoration:none;
+    padding: 5px, 20px;
+    font family: "Roboto" sans-serif;
+    font size: 15px;
+}
+.main-nav li active a{
+   border: 1px solid white;
+}
+.main-nav li active a:hover{
+    border: 1px solid white;
+}
+body{
+ font-family: monospace;
+}
+.row{
+  max-width: 1200px;
+  margin: auto;
+}
+.button{
+ margin-top: 30px;
+ margin-left: 500px;
+}
+.btn{
+   border: 1px solid white;
+   padding: 10px 30px;
+   color: white;
+   text-decoration: none;
+   margin-right: 10px;
+   font-size: 13px;
+   text-transform: uppercase;
+}
+.btn-one{
+    background-color: darkorange;
+    font family: "Roboto" sans-serif;
+}
+.btn-one: hover{
+       transition: 0.5s;
+}
+h3{
+   color: white;
+   text-transform: uppercase;
+   font-size: 70px;
+   text-align: center;
+   margin-top: 275px;
+}
+.lout{
+   position:fixed;
+   right:10px;
+   top:5px;
+}
+
+.addform{
+    width: 500px;
+    height: 600px;
+    position: relative;
+    margin: 6% auto;
+    background: #fff;
+    padding: 5px;
+    overflow: hidden;
+      }
+.box{
+    width: 220px;
+    margin: 35px auto;
+    position: relative;
+}
+.formc{
+ width: 300px;
+    height: 400px;
+    position: relative;
+    margin: 6% auto;
+    background: #fff;
+    padding: 5px;
+    overflow: hidden;
 }

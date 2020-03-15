@@ -1,12 +1,17 @@
-<!DOCTYPE html>
+{% load static %}
+<html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Display Questions</title>
+    <link rel="stylesheet" href="{% static 'styles/style.css' %}">
 </head>
 <body>
-{% for question in questions %}
-    {{ question.question }}<br><br>
-{% endfor %}
+   <div class="hero">
+
+        {% for question in questions %}
+      {{ question.question }}<br><br>
+      {% endfor %}
+   </div>
 </body>
 </html>

@@ -66,7 +66,7 @@ def createCourse(request):
         courseData = ProfessorCourses()
 
         courseData.save()
-        print("Course added to database")
+        print("Course added")
         return redirect('profHomePage')
     else:
         return render(request, "createCourse.html")

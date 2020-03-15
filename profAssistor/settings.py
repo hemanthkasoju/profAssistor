@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'profAssistor.wsgi.application'
 
 DATABASES = {
     'default': {
-        # 'ENGINE': 'django.db.backends.postgresql',
+       'ENGINE': 'django.db.backends.postgresql',
         # 'NAME': 'profAssist',
         # 'USER':'postgres',
         # 'PASSWORD':'0711',

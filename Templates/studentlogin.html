@@ -16,7 +16,7 @@
 
            <form id="login" class="input-group" action="login" method="post">
                {% csrf_token %}
-             <input type="text" class="input-field" placeholder="User Id" name="username" required><br>
+             <input type="text" class="input-field" placeholder="Student Id" name="StudentId" required><br>
              <input type="text" class="input-field" placeholder="Enter Password" name = "password" required><br>
                <input type="checkbox" class="checkbox">Remember Password
              <button type="submit" class="submit-btn">Log In</button><br>
@@ -24,15 +24,13 @@
                     {% for message in messages %}
                      <h3>{{message}}</h3>
                      {% endfor %}
-               </div><br>
-               <div>Are u a Student?</div><br>
-               <button type="submit" class="submit-btn"> Student </button>
+               </div>
 
            </form>
             <form id="Register" class="input-group" action="register" method="post">
                 {% csrf_token %}
-               <input type="text" class="input-field" placeholder="Username" name="username"required><br>
-               <input type="text" class="input-field" placeholder="First Name" name="firstName"required><br>
+                <input type="text" class="input-field" placeholder="StudentID" name="studentId"required><br>
+                <input type="text" class="input-field" placeholder="First Name" name="firstName"required><br>
                 <input type="text" class="input-field" placeholder="Last Name" name="lastName"required><br>
                 <input type="email" class="input-field" placeholder="Email Id" name="email"required><br>
                 <input type="text" class="input-field" value=""  placeholder="Password" name="password" required><br>

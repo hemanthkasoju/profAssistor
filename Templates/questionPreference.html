@@ -1,6 +1,12 @@
+{% load static %}
 <html>
+<head>
+        <meta charset="UTF-8">
+        <title>Adding Course</title>
+         <link rel="stylesheet" href="{% static 'styles/style.css' %}">
+</head>
 <body>
-<form action="selectQuestionPreference" method="POST">
+    <form action="selectQuestionPreference" method="POST">
     <label for="T">Time:</label><br>
 	<input type="number" name="time" value="" id="T"><br><br>
     <label for="D"> Difficulty</label><br>
