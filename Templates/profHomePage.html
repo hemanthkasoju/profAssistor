@@ -7,24 +7,30 @@
 </head>
 <body>
 <div class="hero">
-
     <div class="navigation">
         <a class="logoutbutton" href="/accounts/logout">
             <img src="https://www.vippng.com/png/detail/0-2967_png-file-svg-logout-logo-png.png">
             <div class="logout">Logout</div>
         </a>
     </div>
+    <div> Course Creation </div>
+    <div class="form-box">
 
-    <a href="/accounts/createCourse"> Create course </a><br><br>
 
-    {% for profCourse in profCourses %}
-    <form action="AddQuestions/addQuestions" method="post">
-        {% csrf_token %}
+        <div>
+            <div>
+                <a href="/accounts/createCourse"> Add Course </a><br><br>
+            </div>
+        </div>
+        {% for profCourse in profCourses %}
+        <form action="AddQuestions/addQuestions" method="post">
+            {% csrf_token %}
 
-        <input type="hidden" name="courseID" value={{ profCourse.courseID }}><br><br>
-        <input type="submit" name={{ profCourse.courseName }} value={{ profCourse.courseName }}><br>
-        {% endfor %}
-    </form>
+            <input type="hidden" name="courseID" value={{ profCourse.courseID }}><br><br>
+            <input type="submit" name={{ profCourse.courseName }} value={{ profCourse.courseName }}><br>
+            {% endfor %}
+        </form>
+    </div>
 </div>
 </body>
 </html>
