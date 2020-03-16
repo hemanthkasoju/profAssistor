@@ -21,7 +21,6 @@ img {
   width: 25px;
   border-radius: 50px;
   float: left;
-  padding-top: 5px;
 }
 
 .logout {
@@ -35,27 +34,24 @@ img {
   opacity: 0;
   transition: opacity .45s;
   -webkit-transition: opacity .35s;
-  font-size: large;
 
 }
 
-.logoutbutton {
-  text-decoration: none;
-  float: right;
+.button {
+	text-decoration: none;
+	float: right;
   padding: 12px;
   margin: 15px;
   color: white;
   width: 25px;
-  background-color: #f1ecec;
+  background-color: black;
   transition: width .35s;
   -webkit-transition: width .35s;
-  overflow: hidden;
-  border-radius: 13px;
-  color: black;
+  overflow: hidden
 }
 
 a:hover {
-  width: 135px;
+  width: 100px;
 }
 
 a:hover .logout{
