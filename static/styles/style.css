@@ -12,6 +12,7 @@ padding:0;
     position: absolute;
 }
 
+/** START:::: Logout CSS*/
 .navigation {
   width: 100%;
   background-color: black;
@@ -66,7 +67,31 @@ a {
   text-decoration: none;
 }
 
+/** END: Logout button css***/
 
+
+/** START: HEADING ****/
+.head-contianer {
+    background-image: url(sectionBanner.png);
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 150px;
+    background-size: cover;
+    position: relative;
+    margin-top: -14px;
+}
+
+.mainHeader-text {
+    top: 44%;
+    position: absolute;
+    text-align: center;
+    left: 34%;
+    font-size: large;
+    font-weight: bold;
+}
+
+
+/** END: HEADING ****/
 
 .form-box {
     width: 390px;
