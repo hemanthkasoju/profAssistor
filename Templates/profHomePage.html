@@ -28,9 +28,8 @@
 
         <div class="availableCourses-heading"> List of Available Courses</div>
         {% for profCourse in profCourses %}
-        <form action="AddQuestions/addQuestions" method="post">
+        <form action="AddQuestions/addQuestions" method="post" style="overflow: auto; height: 282px;">
             {% csrf_token %}
-
             <input type="hidden" name="courseID" value={{ profCourse.courseID }}>
             <input type="submit" class="courseDetailButton" name={{ profCourse.courseName }} value={{ profCourse.courseName }}><br>
             {% endfor %}

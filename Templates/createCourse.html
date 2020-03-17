@@ -14,7 +14,7 @@
             <div class="logout">Logout</div>
         </a>
     </div>
-    <div class="form-box">
+    <div class="form-box createC">
          <div class="head-contianer">
 				 <div class="mainHeader-text">Create Course </div>
 		 </div>
@@ -31,8 +31,9 @@
                 {% endfor %}
             </div>
         </form>
-		  <div >{% if user.is_authenticated %}
-            {{ user.first_name }} Create Course
+		  <div  style="text-align: center; font-weight:bold; margin-top: 25px;">
+		  {% if user.is_authenticated %}
+            Hi, {{ user.first_name }} enter course details
             {% endif %}</div>
     </div>
 </div>

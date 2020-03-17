@@ -97,6 +97,7 @@ a {
    text-align: center;
     margin-top: 20px;
     font-weight: bold;
+    font-size: 15px;
    }
 
     .addCourse-buttonContainer {
@@ -118,11 +119,12 @@ a {
 
 /***START: Course Details Button***/
 .availableCourses-heading {
-    text-align: center;
+   text-align: center;
     margin: 10px 30px;
     border: 4px solid #beacac;
-    padding: 16px;
+    padding: 2px;
     font-weight: bold;
+    font-size: 14px;
 }
 
 .courseDetailButton {
@@ -187,6 +189,13 @@ a {
     position: absolute;
     width: 280px;
 }
+
+.form-box.createC .input-group {
+    width: 280px;
+    left: 52px;
+    top: 200px;
+}
+
 .input-field{
     width: 300px;
     padding: 10px 0;
