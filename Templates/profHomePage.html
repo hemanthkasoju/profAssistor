@@ -25,12 +25,14 @@
                 <a href="/accounts/createCourse" class="addCourse-button"> Add Course </a><br><br>
             </div>
         </div>
+
+        <div class="availableCourses-heading"> List of Available Courses</div>
         {% for profCourse in profCourses %}
         <form action="AddQuestions/addQuestions" method="post">
             {% csrf_token %}
 
-            <input type="hidden" name="courseID" value={{ profCourse.courseID }}><br><br>
-            <input type="submit" name={{ profCourse.courseName }} value={{ profCourse.courseName }}><br>
+            <input type="hidden" name="courseID" value={{ profCourse.courseID }}>
+            <input type="submit" class="courseDetailButton" name={{ profCourse.courseName }} value={{ profCourse.courseName }}><br>
             {% endfor %}
         </form>
     </div>
