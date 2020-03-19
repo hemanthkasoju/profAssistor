@@ -41,7 +41,7 @@ def register(request):
 
             else:
                 user = User.objects.create_user(username=username, password=password, email=email, first_name=firstName,
-                                                last_name=lastName)
+                                                last_name=lastName, is_staff=True)
                 user.save()
                 print("User created")
                 return redirect('login')
@@ -71,11 +71,69 @@ def createCourse(request):
 
 
 def profHomePage(request):
+
     userID = request.user.id
     print(userID)
     profCourses = ProfessorCourses.objects.filter(user_id=userID)
     return render(request, "profHomePage.html", {'profCourses': profCourses})
 
 
-def course(request, courseID):
-    return redirect('')
+def courseHome(request, courseID):
+
+    print(courseID)
+    request.session["courseID"] = courseID
+    return render(request, "courseHomePage.html")
+
+
+def studentLogin(request):
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+        user = auth.authenticate(username=username, password=password)
+        if user is not None:
+            auth.login(request, user)
+
+            return redirect('studentHomePage')
+
+        else:
+            messages.info(request, 'invalid credentials')
+            return redirect('studentLogin')
+
+    else:
+        return render(request, "studentLogin.html")
+
+
+def studentRegister(request):
+    if request.method == 'POST':
+        firstName = request.POST['firstName']
+        lastName = request.POST['lastName']
+        username = request.POST['username']
+        email = request.POST['email']
+        password = request.POST['password']
+        confirmPassword = request.POST['confirmPassword']
+        if password == confirmPassword:
+            if User.objects.filter(username=username).exists():
+                print("Username taken")
+                messages.info(request, 'Username Taken')
+                return redirect('studentRegister')
+            if User.objects.filter(email=email).exists():
+                messages.info(request, 'Email already registered')
+                return redirect('studentRegister')
+
+            else:
+                user = User.objects.create_user(username=username, password=password, email=email, first_name=firstName,
+                                                last_name=lastName, is_staff= False)
+                user.save()
+                print("User created")
+                return redirect('studentLogin')
+        else:
+            messages.info(request, 'Password not matching')
+            return redirect('studentRegister')
+    else:
+        return render(request, 'studentLogin.html')
+
+
+def studentHomePage(request):
+
+    student = request.user
+    return render(request, 'studentHomePage.html', {'student': student})

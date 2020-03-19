@@ -16,10 +16,17 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+# from accounts.views import login, logout, register, createCourse, profHomePage
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('AddQuestions/', include('AddQuestions.urls')),
     path('accounts/', include('accounts.urls')),
     path('generateQuestionPaper/', include('generateQuestionPaper.urls')),
+
+    # path('login/', login, name='login'),
+    # path('register/', register),
+    # path('logout/', logout),
+    # path('createCourse/', createCourse),
+    # path('profHomePage/', profHomePage),
 
 ]

@@ -13,22 +13,23 @@
                 <button type="button" class="toggle-btn" onclick="login()">Log In </button>
                 <button type="button" class="toggle-btn" onclick="Register()">Register</button>
             </div>
-
-           <form id="login" class="input-group" action="login" method="post">
+           <form id="login" class="input-group" action="#" method="post">
                {% csrf_token %}
              <input type="text" class="input-field" placeholder="User Id" name="username" required><br>
              <input type="password" class="input-field" placeholder="Enter Password" name = "password" required><br>
-               <input type="checkbox" class="checkbox">Remember Password
+{#               <input type="checkbox" class="checkbox">Remember Password#}
              <button type="submit" class="submit-btn">Log In</button><br>
                <div>
                     {% for message in messages %}
                      <h3>{{message}}</h3>
                      {% endfor %}
                </div><br>
-               <div>Are u a Student?</div><br>
-               <button type="submit" class="submit-btn"> Student </button>
+               <div>Click here if you are a student</div><br>
+               <a class="submit-btn" href="studentLogin">I am a student</a>
+
 
            </form>
+
             <form id="Register" class="input-group" action="register" method="post">
                 {% csrf_token %}
                <input type="text" class="input-field" placeholder="Username" name="username"required><br>

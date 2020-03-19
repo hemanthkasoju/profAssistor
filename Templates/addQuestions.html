@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="{% static 'styles/style.css' %}"/>
 </head>
 <a href="/accounts/logout"> Logout </a><br><br>
-<form action="addQuestions" method="post">
+<form action="#" method="post">
     {% csrf_token %}
     <div class="hero">
         {% if user.is_authenticated %}
@@ -24,7 +24,7 @@
         </div>
 
         <div class="form-box">
-            <form action="addQuestions" method="post" class="input-group">
+            <form action='/AddQuestions/addQuestions' method="post" class="input-group">
                 {% csrf_token %}
                 <label for="T"> Question</label>
                 <textarea id="T" placeholder="Question" name="question" rows="5" cols="50" required> </textarea><br><br>
