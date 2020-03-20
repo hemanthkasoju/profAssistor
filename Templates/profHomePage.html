@@ -27,8 +27,11 @@
         </div>
 
         <div class="availableCourses-heading"> List of Available Courses</div>
+         <div class="courseDetailButton">
         {% for profCourse in profCourses %}
-            <a href={% url 'courseHome' courseID=profCourse.courseID%} class="courseDetailButton">{{ profCourse.courseName }}</a><br><br>
+            <a href={% url 'courseHome' courseID=profCourse.courseID%} class="addCourse-button">{{ profCourse.courseName }} </a>
+        </div>
+
             {% endfor %}
     </div>
 </div>
