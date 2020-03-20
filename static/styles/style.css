@@ -114,6 +114,7 @@ a {
     border-radius: 8px;
     color: white;
     font-weight: bold;
+        text-align: center;
     }
 /**END : Add course css changes****/
 
@@ -127,6 +128,14 @@ a {
     font-size: 14px;
 }
 
+.add-que {
+   text-align: center;
+    margin: 10px 30px;
+    border: 4px solid #beacac;
+    padding: 2px;
+    font-weight: bold;
+    font-size: 14px;
+}
 .courseDetailButton {
     background: linear-gradient(to right,#ff105f,#ffad06);
     width: 200px;
@@ -332,8 +341,8 @@ header {
     color: #fff;
     text-decoration:none;
     padding: 5px, 20px;
-    font family: "Roboto" sans-serif;
-    font size: 15px;
+    fontfamily: "Roboto" sans-serif;
+    fontsize: 15px;
 }
 .main-nav li active a{
    border: 1px solid white;

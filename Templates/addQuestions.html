@@ -4,14 +4,15 @@
     <title> Add Questions </title>
     <link rel="stylesheet" href="{% static 'styles/style.css' %}"/>
 </head>
-<a href="/accounts/logout"> Logout </a><br><br>
 <form action="#" method="post">
     {% csrf_token %}
     <div class="hero">
-        {% if user.is_authenticated %}
-        Hi, {{ user.first_name }}
-        <a href="/accounts/logout" class="lout"> Logout </a><br><br>
-        {% endif %}
+        <div class="navigation">
+        <a class="logoutbutton" href="/accounts/logout">
+            <img src="https://www.vippng.com/png/detail/0-2967_png-file-svg-logout-logo-png.png">
+            <div class="logout">Logout</div>
+        </a>
+    </div>
         <div class="row">
             <ul class="main-nav">
                 <li class="active"><a href=""> Home </a></li>
@@ -24,10 +25,19 @@
         </div>
 
         <div class="form-box">
-            <form action='/AddQuestions/addQuestions' method="post" class="input-group">
+            <div class="head-contianer">
+            <div class="mainHeader-text">Add Questions</div>
+        </div>
+            <form action='/AddQuestions/addQuestions'  method="post" class="input-group">
                 {% csrf_token %}
-                <label for="T"> Question</label>
-                <textarea id="T" placeholder="Question" name="question" rows="5" cols="50" required> </textarea><br><br>
+                <div  style="text-align: center; font-weight:bold; margin-top: 25px;">
+		  {% if user.is_authenticated %}
+            Hi, {{ user.first_name }} Enter Questions
+            {% endif %}
+                </div>
+                <div align="center" class = "add-que">
+                <label for="T">Questions</label>
+                <textarea id="T" placeholder="Question" name="question" rows="3" cols="40" required> </textarea><br><br>
 
                 <input type="number" name="time" value="" placeholder="Time" required><br><br>
                 <label for="T"> </label>
@@ -36,7 +46,7 @@
                     <option value="1">Very Easy</option>
                     <option value="2">Easy</option>
                     <option value="3">Moderate</option>
-                    <option value="4">Difficult</option>
+                    <option value="4" selected>Difficult</option>
                     <option value="5">Very Difficult</option>
                 </select><br><br>
                 <input type="text" name="marks" placeholder="Marks"><br><br>
@@ -53,6 +63,7 @@
                     <option value="False">No</option>
                 </select><br><br>
                 <input type="submit" name="submit" value="submit" class="btn-one"><br><br>
+                    </div>
                 <div>
                     {% for message in messages %}
                     <h3>{{message}}</h3>
