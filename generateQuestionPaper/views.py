@@ -4,9 +4,12 @@ from AddQuestions.models import Question
 
 def selectQuestionPreference(request):
     if request.method == 'POST':
-        print("This is post")
-        questions = Question.objects.all()
-        selectedQuestions = []
+        courseID = request.session.get("courseID")
+        questions = Question.objects.filter(courseID=courseID)
+        time = request.POST['time']
+        password = request.POST['password']
+        difficulty = request.POST['difficulty']
+        marks = request.POST['marks']
 
         return render(request, 'displayQuestions.html', {'questions': questions})
 

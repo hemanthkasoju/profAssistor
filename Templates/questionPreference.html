@@ -6,23 +6,19 @@
          <link rel="stylesheet" href="{% static 'styles/style.css' %}">
 </head>
 <body>
-    <form action="selectQuestionPreference" method="POST">
-    <label for="T">Time:</label><br>
+    <form action="#" method="POST">
+        {% csrf_token %}
+    <label for="T">Total Time : </label><br>
 	<input type="number" name="time" value="" id="T"><br><br>
-    <label for="D"> Difficulty</label><br>
+    <label for="D">Average Difficulty : </label><br>
     <input type= "number" name="difficulty" value="" id="D"><br><br>
-	<label for="M">Marks:</label><br>
+	<label for="M">Total Marks : </label><br>
     <input type= "number" name="marks" value="" id="M"><br><br>
-    <input type="submit">
+        <label for="C"> Chapters : </label><br>
+    <input type= "number" name="chapter" value="" id="C"><br><br>
+    <input type="Submit" name="Submit" value="Submit">
 </form>
-
-{#{% for question in questions %}#}
-{#    {{ question.question }}<br><br>#}
-{#{% endfor %}#}
-
-
 <div>
-
 </div>
 </body>
 </html>

@@ -3,7 +3,6 @@ from .models import Question
 
 
 def addQuestions(request):
-
     if request.method == 'POST':
 
         print("**********************")
@@ -17,8 +16,8 @@ def addQuestions(request):
         time = request.POST['time']
         repeated = 0
 
-
-        questionData = Question(question=question, marks=marks, difficulty=difficulty, isImportant=isImportant, chapter=chapter, time=time, repeated=repeated, courseID=courseID)
+        questionData = Question(question=question, marks=marks, difficulty=difficulty, isImportant=isImportant,
+                                chapter=chapter, time=time, repeated=repeated, courseID=courseID)
 
         questionData.save()
         print("Question added to database")
@@ -28,8 +27,3 @@ def addQuestions(request):
         print(request.session.get("courseID"))
 
         return render(request, 'addQuestions.html')
-
-
-
-
-

@@ -28,14 +28,8 @@
 
         <div class="availableCourses-heading"> List of Available Courses</div>
         {% for profCourse in profCourses %}
-            <a href={% url 'courseHome' courseID=profCourse.courseID%}>{{ profCourse.courseName }}</a>
-
-{#        <form action="courseHome" method="post" style="overflow: auto; height: 282px;">#}
-{#            {% csrf_token %}#}
-{#            <input type="hidden" name="courseID" value={{ profCourse.courseID }}>#}
-{#            <input type="submit" class="courseDetailButton" name={{ profCourse.courseID }} value={{ profCourse.courseID }}><br>#}
+            <a href={% url 'courseHome' courseID=profCourse.courseID%} class="courseDetailButton">{{ profCourse.courseName }}</a><br><br>
             {% endfor %}
-{#        </form>#}
     </div>
 </div>
 </body>
