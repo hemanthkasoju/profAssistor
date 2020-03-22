@@ -15,7 +15,7 @@
             </div>
            <form id="login" class="input-group" action="#" method="post">
                {% csrf_token %}
-             <input type="text" class="input-field" placeholder="Professor ID" name="username" required><br>
+             <input type="text" class="input-field" placeholder="Username" name="username" required><br>
              <input type="password" class="input-field" placeholder="Enter Password" name = "password" required><br><br>
              <button type="submit" class="submit-btn">Log In</button><br>
                <div>
@@ -24,7 +24,7 @@
                      {% endfor %}
                </div>
                <div class="login-decider">Are you a student?
-               <a href="studentLogin" class="submit-btn">Click here</a>
+                   <a href="studentLogin">Click here</a>
                </div>
 
 

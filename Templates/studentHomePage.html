@@ -22,8 +22,15 @@
         <div class="addCourse-container" style="width: 60%;margin: 50px auto;">
             <div>Hi {{ student.first_name }}, Click on the below link to register for a course</div> <br /> <br />
             <a href="studentCourseRegister" class="addCourse-button"> Register course</a><br><br>
-            {#<a href="/AddQuestions/addQuestions" class="addCourse-button"> Course </a><br><br>#}
+             {% for studentCourse in studentCourses %}
+                 <a href={% url 'studentCourseHome' courseID=studentCourse.courseID%} class="addCourse-button">{{ studentCourse.courseID }} </a><br><br>
+
+     {% endfor %}
         </div>
+
     </div>
+
+
+</div>
 </body>
 </html>

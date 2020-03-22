@@ -13,4 +13,8 @@ urlpatterns = [
     path("courseHome", views.courseHome, name="courseHome"),
     path('courseHome/<courseID>', views.courseHome, name='courseHome'),
     path("studentCourseRegister", views.studentCourseRegister, name="studentCourseRegister"),
+    path('studentCourseHome', views.studentCourseHome, name='studentCourseHome'),
+
+    path('studentCourseHome/<courseID>', views.studentCourseHome, name='studentCourseHome'),
+
 ]

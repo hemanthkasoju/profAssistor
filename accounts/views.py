@@ -133,7 +133,7 @@ def studentRegister(request):
 
 def studentHomePage(request):
     student = request.user
-    studentCourses = ProfessorCourses.objects.filter(user_id=student.id)
+    studentCourses = StudentCourses.objects.filter(user_id=student.id)
     return render(request, 'studentHomePage.html', {'student': student, "studentCourses": studentCourses})
 
 
@@ -142,6 +142,7 @@ def studentCourseRegister(request):
         courseID = request.POST['courseID']
 
         if ProfessorCourses.objects.filter(courseID=courseID).exists():
+
             StudentCourses.objects.create(courseID=courseID, user_id=request.user.id)
             print("Course added to database")
             return redirect('studentHomePage')
@@ -151,3 +152,8 @@ def studentCourseRegister(request):
 
     else:
         return render(request, "courseRegister.html")
+
+
+def studentCourseHome(request, courseID) :
+    print(courseID)
+    return render(request, "studentCourseHome.html")

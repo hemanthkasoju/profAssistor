@@ -30,7 +30,7 @@
          <div class="courseDetailButton">
         {% for profCourse in profCourses %}
             <a href={% url 'courseHome' courseID=profCourse.courseID%} class="addCourse-button">{{ profCourse.courseName }} </a><br><br>
-            {% endfor %}
+        {% endfor %}
          </div>
     </div>
 </div>
