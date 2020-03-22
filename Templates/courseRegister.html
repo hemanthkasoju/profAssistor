@@ -1,21 +1,37 @@
-<!DOCTYPE html>
+{% load static %}
+<html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Student Course Register</title>
+     <link rel="stylesheet" href="{% static 'styles/style.css' %}">
 </head>
 <body>
+<div class="hero">
+    <div class="navigation">
+        <a class="logoutbutton" href="/accounts/logout">
+            <img src="https://www.vippng.com/png/detail/0-2967_png-file-svg-logout-logo-png.png">
+            <div class="logout">Logout</div>
+        </a>
+    </div>
+    <div class="form-box createC">
+         <div class="head-contianer">
+				 <div class="mainHeader-text">Register Course </div>
+		 </div>
+        <div  style="text-align: center; font-weight:bold; margin-top: 25px;">
+		  {% if user.is_authenticated %}
+            Hi, {{ user.first_name }} enter course details
+            {% endif %}</div>
+
 <form action="studentCourseRegister" method="post">
     {% csrf_token %}
     Register Course
     <label for="C">Course ID</label><br>
     <input type="text" name="courseID" ID="C"><br><br>
     <input type="Submit" name="Submit" value="Register">
+
 </form>
-<div>
-{% for message in messages %}
-    {{ message }}
-{% endfor %}
-</div>>
+</div>
+     </div>
 </body>
 </html>
