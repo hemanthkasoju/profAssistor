@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth.models import User, auth
-from .models import ProfessorCourses
+from .models import ProfessorCourses, StudentCourses
 
 
 def login(request):
@@ -71,7 +71,6 @@ def createCourse(request):
 
 
 def profHomePage(request):
-
     userID = request.user.id
     print(userID)
     profCourses = ProfessorCourses.objects.filter(user_id=userID)
@@ -79,7 +78,6 @@ def profHomePage(request):
 
 
 def courseHome(request, courseID):
-
     print(courseID)
     request.session["courseID"] = courseID
     return render(request, "courseHomePage.html")
@@ -122,7 +120,7 @@ def studentRegister(request):
 
             else:
                 user = User.objects.create_user(username=username, password=password, email=email, first_name=firstName,
-                                                last_name=lastName, is_staff= False)
+                                                last_name=lastName, is_staff=False)
                 user.save()
                 print("User created")
                 return redirect('studentLogin')
@@ -134,6 +132,22 @@ def studentRegister(request):
 
 
 def studentHomePage(request):
-
     student = request.user
-    return render(request, 'studentHomePage.html', {'student': student})
+    studentCourses = ProfessorCourses.objects.filter(user_id=student.id)
+    return render(request, 'studentHomePage.html', {'student': student, "studentCourses": studentCourses})
+
+
+def studentCourseRegister(request):
+    if request.method == 'POST':
+        courseID = request.POST['courseID']
+
+        if ProfessorCourses.objects.filter(courseID=courseID).exists():
+            StudentCourses.objects.create(courseID=courseID, user_id=request.user.id)
+            print("Course added to database")
+            return redirect('studentHomePage')
+        else:
+            messages.info(request, 'Course not available')
+            return redirect('studentCourseRegister')
+
+    else:
+        return render(request, "courseRegister.html")
