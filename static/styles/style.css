@@ -115,6 +115,7 @@ a {
     color: white;
     font-weight: bold;
         text-align: center;
+        margin: 3px 0;
     }
 /**END : Add course css changes****/
 
@@ -137,14 +138,9 @@ a {
     font-size: 14px;
 }
 .courseDetailButton {
-    background: linear-gradient(to right,#ff105f,#ffad06);
-    width: 200px;
-    height: 40px;
-    border-radius: 8px;
-    display: block;
-    margin : 0 auto;
-    color: white;
-    font-weight: bold;
+   text-align: center;
+    overflow-y: auto;
+    height: 273px;
 }
 
 /***END: Course Details Button***/
