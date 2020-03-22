@@ -118,6 +118,19 @@ a {
     }
 /**END : Add course css changes****/
 
+.login-decider{
+    text-align: center;
+   overflow: hidden;
+     margin-top: 47px;
+}
+
+.login-decider .submit-btn {
+    width: 64%;
+    color: white;
+    margin-top: 14px;
+   }
+
+
 /***START: Course Details Button***/
 .availableCourses-heading {
    text-align: center;
