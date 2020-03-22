@@ -35,16 +35,17 @@
                     {% endif %}
                 </div>
                 <div align="center" class="add-que">
-                   <select name="chapter" class="input-field">Chapter
+                   <select name="chapter" class="input-field">
+                       <option value="" selected>Select Chapter</option>
                         <option value="1">Python</option>
                         <option value="2">Java</option>
                         <option value="3">JavaScript</option>
                         <option value="4">PHP</option>
                         <option value="5">HTML</option>
                     </select>
-
-                    <input type="number" name="time" class="input-field" value="" placeholder="Total Time" required><br><br>
+                    <input type="number" name="time" class="input-field" value="" placeholder="Total Time" required><br>
                     <select name="difficulty" placeholder=" Average Difficulty" class="input-field" required>
+                        <option value="" selected>Select Difficulty</option>
                         <option value="1">Very Easy</option>
                         <option value="2">Easy</option>
                         <option value="3">Moderate</option>
