@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Student Course Register</title>
-     <link rel="stylesheet" href="{% static 'styles/style.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/style.css' %}">
 </head>
 <body>
 <div class="hero">
@@ -15,23 +15,25 @@
         </a>
     </div>
     <div class="form-box createC">
-         <div class="head-contianer">
-				 <div class="mainHeader-text">Course Details </div>
-		 </div>
-        <div  style="text-align: center; font-weight:bold; margin-top: 25px;">
-		  {% if user.is_authenticated %}
+        <div class="head-contianer">
+            <div class="mainHeader-text">Course Details</div>
+        </div>
+        <div style="text-align: center; font-weight:bold; margin-top: 25px;">
+            {% if user.is_authenticated %}
             Hi, {{ user.first_name }} enter course details
-            {% endif %}</div>
+            {% endif %}
+        </div>
 
-<form action="studentCourseRegister" method="post" class="input-group">
-    {% csrf_token %}
+        <form action="studentCourseRegister" method="post" class="input-group">
+            {% csrf_token %}
 
-    <label for="C"></label><br>
-    <input type="text" class="input-field"name="courseID" ID="C" placeholder="Course Id" required><br><br>
-    <input type="Submit" name="Submit" value="Register" class="addCourse-button">
-
-</form>
+            <label for="C"></label><br>
+            <input type="text" class="input-field" name="courseID" ID="C" placeholder="Course Id" required><br><br>
+            <div class="addCourse-buttonContainer" style="text-align: center;">
+                <input type="Submit" name="Submit" value="Register" class="addCourse-button">
+            </div>
+        </form>
+    </div>
 </div>
-     </div>
 </body>
 </html>
