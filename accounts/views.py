@@ -8,7 +8,7 @@ def login(request):
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
-        user = auth.authenticate(username=username, password=password)
+        user = auth.authenticate(username=username, password=password, is_staff=True)
         if user is not None:
             auth.login(request, user)
 
@@ -87,7 +87,7 @@ def studentLogin(request):
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
-        user = auth.authenticate(username=username, password=password)
+        user = auth.authenticate(username=username, password=password, is_staff=False)
         if user is not None:
             auth.login(request, user)
 

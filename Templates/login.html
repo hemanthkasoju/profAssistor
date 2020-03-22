@@ -15,17 +15,18 @@
             </div>
            <form id="login" class="input-group" action="#" method="post">
                {% csrf_token %}
-             <input type="text" class="input-field" placeholder="User Id" name="username" required><br>
-             <input type="password" class="input-field" placeholder="Enter Password" name = "password" required><br>
+             <input type="text" class="input-field" placeholder="User ID" name="username" required><br>
+             <input type="password" class="input-field" placeholder="Enter Password" name = "password" required><br><br>
 {#               <input type="checkbox" class="checkbox">Remember Password#}
              <button type="submit" class="submit-btn">Log In</button><br>
                <div>
                     {% for message in messages %}
                      <h3>{{message}}</h3>
                      {% endfor %}
-               </div><br>
-               <div>Click here if you are a student</div><br>
-               <a class="submit-btn" href="studentLogin">I am a student</a>
+               </div>
+               <div>Are you a student?
+               <a href="studentLogin">Click here</a>
+               </div>
 
 
            </form>
@@ -36,9 +37,8 @@
                <input type="text" class="input-field" placeholder="First Name" name="firstName"required><br>
                 <input type="text" class="input-field" placeholder="Last Name" name="lastName"required><br>
                 <input type="email" class="input-field" placeholder="Email Id" name="email"required><br>
-                <input type="text" class="input-field" value=""  placeholder="Password" name="password" required><br>
-                 <input type="text" class="input-field" value=""  placeholder="Confirm Password" name="confirmPassword"required><br>
-                 <input type="checkbox" class="checkbox"><span>I accept the terms & conditions</span>
+                <input type="password" class="input-field" value=""  placeholder="Password" name="password" required><br>
+                 <input type="password" class="input-field" value=""  placeholder="Confirm Password" name="confirmPassword"required><br><br>
                 <button type="submit" class="submit-btn">Register</button>
 
                   <div>
