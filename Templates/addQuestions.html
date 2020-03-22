@@ -35,17 +35,15 @@
                 <div align="center" class="add-que">
                    <textarea class="input-field" placeholder="Question" name="question" rows="2" cols="10"
                       required></textarea><br>
-                    <input type="number" name="time" class="input-field" value="" placeholder="Time" required><br><br>
-                    <label for="T"> </label>
-                    <label for="D">Difficulty</label>
-                    <select id="D" name="difficulty" placeholder="Difficulty" class="input-field">
+                    <input type="number" name="time" class="input-field" value="" placeholder="Time" required><br>
+                    <select name="difficulty" placeholder="Difficulty" class="input-field" required>
                         <option value="1">Very Easy</option>
                         <option value="2">Easy</option>
                         <option value="3">Moderate</option>
-                        <option value="4" selected>Difficult</option>
+                        <option value="4">Difficult</option>
                         <option value="5">Very Difficult</option>
                     </select>
-                    <input type="number" name="marks" placeholder="Marks" class="input-field">
+                    <input type="number" name="marks" placeholder="Marks" class="input-field" required>
                     <select name="chapter" class="input-field">Chapter
                         <option value="1">Python</option>
                         <option value="2">Java</option>
@@ -53,8 +51,7 @@
                         <option value="4">PHP</option>
                         <option value="5">HTML</option>
                     </select>
-                    <label for="I">Important:</label>
-                    <select id="I" name="important" class="input-field">
+                    <select  placeholder=" Important" name="important" class="input-field" required>
                         <option value="True">Yes</option>
                         <option value="False">No</option>
                     </select>
