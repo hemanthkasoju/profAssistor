@@ -17,7 +17,7 @@
            <form id="login" class="input-group" action="studentLogin" method="post">
                {% csrf_token %}
              <input type="text" class="input-field" placeholder="Student Id" name="username" required><br>
-             <input type="text" class="input-field" placeholder="Enter Password" name = "password" required><br>
+             <input type="password" class="input-field" placeholder="Enter Password" name = "password" required><br><br>
 {#               <input type="checkbox" class="checkbox">Remember Password#}
              <button type="submit" class="submit-btn">Log In</button><br>
                <div>
@@ -33,8 +33,8 @@
                 <input type="text" class="input-field" placeholder="First Name" name="firstName"required><br>
                 <input type="text" class="input-field" placeholder="Last Name" name="lastName"required><br>
                 <input type="email" class="input-field" placeholder="Email Id" name="email"required><br>
-                <input type="text" class="input-field" value=""  placeholder="Password" name="password" required><br>
-                <input type="text" class="input-field" value=""  placeholder="Confirm Password" name="confirmPassword"required><br>
+                <input type="password" class="input-field" value=""  placeholder="Password" name="password" required><br>
+                <input type="password" class="input-field" value=""  placeholder="Confirm Password" name="confirmPassword"required><br><br>
 {#                <input type="checkbox" class="checkbox" required>I accept the terms & conditions#}
                 <button type="submit" class="submit-btn">Register</button><br>
                 <div>
