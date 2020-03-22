@@ -7,62 +7,60 @@
 <form action="#" method="post">
     {% csrf_token %}
     <div class="hero">
-        <div class="navigation">
-        <a class="logoutbutton" href="/accounts/logout">
-            <img src="https://www.vippng.com/png/detail/0-2967_png-file-svg-logout-logo-png.png">
-            <div class="logout">Logout</div>
-        </a>
-    </div>
-        <div class="row">
+
+          <div class="row">
             <ul class="main-nav">
-                <li class="active"><a href="/accounts/profHomePage"> Home </a></li>
-                <li><a href="/accounts/createCourse" class="active"> Create Course </a></li>
-                <li><a href="/AddQuestions/addQuestions"> Add Questions </a></li>
-                <li><a href="/generateQuestionPaper/selectQuestionPreference"> Generate Question Paper </a></li>
-                <li><a href="/generateQuestionPaper/selectQuestionPreference"> Generate Assignment </a></li>
+                <li class="ele"><a href="/accounts/profHomePage"> Home </a></li>
+                <li class="ele"><a href="/accounts/createCourse" class="active"> Create Course </a></li>
+                <li class="ele"><a href="/AddQuestions/addQuestions"> Add Questions </a></li>
+                <li class="ele"><a href="/generateQuestionPaper/selectQuestionPreference"> Generate Question Paper </a></li>
+                <li class="ele"><a href="/generateQuestionPaper/selectQuestionPreference"> Generate Assignment </a></li>
+                <li class="ele"><a class="" href="/accounts/logout">
+                    <div class="">Logout</div>
+                </a></li>
             </ul>
         </div>
 
         <div class="form-box">
             <div class="head-contianer">
-            <div class="mainHeader-text">Add Questions</div>
-        </div>
-            <form action='/AddQuestions/addQuestions'  method="post" class="input-group">
+                <div class="mainHeader-text">Add Questions</div>
+            </div>
+            <form action='/AddQuestions/addQuestions' method="post" class="input-group">
                 {% csrf_token %}
-                <div  style="text-align: center; font-weight:bold; margin-top: 25px;">
-		  {% if user.is_authenticated %}
-            Hi, {{ user.first_name }} Enter Questions
-            {% endif %}
+                <div style="text-align: center; font-weight:bold; margin-top: 25px;">
+                    {% if user.is_authenticated %}
+                    Hi, {{ user.first_name }} Enter Questions
+                    {% endif %}
                 </div>
-                <div align="center" class = "add-que">
-                <label for="T">Question</label>
-                <textarea id="T" placeholder="Question" name="question" rows="3" cols="40" required> </textarea><br><br>
+                <div align="center" class="add-que">
+                    <label for="T">Question</label>
+                    <textarea id="T" placeholder="Question" name="question" rows="3" cols="40" required> </textarea><br><br>
 
-                <input type="number" name="time" value="" placeholder="Time" required><br><br>
-                <label for="T"> </label>
-                <label for="D">Difficulty</label><br>
-                <select id="D" name="difficulty" placeholder="Difficulty"><br><br>
-                    <option value="1">Very Easy</option>
-                    <option value="2">Easy</option>
-                    <option value="3">Moderate</option>
-                    <option value="4" selected>Difficult</option>
-                    <option value="5">Very Difficult</option>
-                </select><br><br>
-                <input type="text" name="marks" placeholder="Marks"><br><br>
-                <select name="chapter">Chapter
-                    <option value="1">Python</option>
-                    <option value="2">Java</option>
-                    <option value="3">JavaScript</option>
-                    <option value="4">PHP</option>
-                    <option value="5">HTML</option>
-                </select><br><br>
-                <label for="I">Important:</label><br>
-                <select id="I" name="important">
-                    <option value="True">Yes</option>
-                    <option value="False">No</option>
-                </select><br><br>
-                <input type="submit" name="submit" value="submit" class="btn-one"><br><br>
-                    </div>
+                    <input type="number" name="time" value="" placeholder="Time" required><br><br>
+                    <label for="T"> </label>
+                    <label for="D">Difficulty</label><br>
+                    <select id="D" name="difficulty" placeholder="Difficulty"><br><br>
+                        <option value="1">Very Easy</option>
+                        <option value="2">Easy</option>
+                        <option value="3">Moderate</option>
+                        <option value="4" selected>Difficult</option>
+                        <option value="5">Very Difficult</option>
+                    </select><br><br>
+                    <input type="text" name="marks" placeholder="Marks"><br><br>
+                    <select name="chapter">Chapter
+                        <option value="1">Python</option>
+                        <option value="2">Java</option>
+                        <option value="3">JavaScript</option>
+                        <option value="4">PHP</option>
+                        <option value="5">HTML</option>
+                    </select><br><br>
+                    <label for="I">Important:</label><br>
+                    <select id="I" name="important">
+                        <option value="True">Yes</option>
+                        <option value="False">No</option>
+                    </select><br><br>
+                    <input type="submit" name="submit" value="submit" class="btn-one"><br><br>
+                </div>
                 <div>
                     {% for message in messages %}
                     <h3>{{message}}</h3>

@@ -14,8 +14,7 @@ padding:0;
 
 /** START:::: Logout CSS*/
 .navigation {
-  width: 100%;
-  background-color: black;
+
 }
 
 img {
@@ -326,9 +325,25 @@ header {
 	background-position: center;
 }
 .main-nav{
-      float:right;
-      list-style: none;
-      margin-top: 30px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+        background: linear-gradient(218.02deg, #209ec5 0%, #db690b 100%);
+    font-weight: bold;
+    font-weight: 500;
+    font-style: normal;
+    line-height: 1.5;
+    font-family: Montserrat, sans-serif;
+    height: 60px;
+    border-bottom: 3px solid #e9bab0;
+}
+.ele {
+    flex: 1;
+    text-align: center;
+    transition: all .2s ease-in-out;
+}
+.ele:hover {
+transform: scale(1.4);
 }
 .main-nav li{
        display: inline-block;
@@ -350,7 +365,7 @@ body{
  font-family: monospace;
 }
 .row{
-  max-width: 1200px;
+
   margin: auto;
 }
 .button{
