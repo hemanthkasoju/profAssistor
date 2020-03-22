@@ -16,18 +16,18 @@
     </div>
     <div class="form-box createC">
          <div class="head-contianer">
-				 <div class="mainHeader-text">Register Course </div>
+				 <div class="mainHeader-text">Course Details </div>
 		 </div>
         <div  style="text-align: center; font-weight:bold; margin-top: 25px;">
 		  {% if user.is_authenticated %}
             Hi, {{ user.first_name }} enter course details
             {% endif %}</div>
 
-<form action="studentCourseRegister" method="post">
+<form action="studentCourseRegister" method="post" class="input-group">
     {% csrf_token %}
-    Register Course
-    <label for="C">Course ID</label><br>
-    <input type="text" name="courseID" ID="C"><br><br>
+
+    <label for="C"></label><br>
+    <input type="text" class="input-field"name="courseID" ID="C" placeholder="Course Id" required><br><br>
     <input type="Submit" name="Submit" value="Register">
 
 </form>
