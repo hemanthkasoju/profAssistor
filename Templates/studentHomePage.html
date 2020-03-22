@@ -9,19 +9,21 @@
 <body>
 <div class="hero">
     <div class="navigation">
-        Hi {{ student.first_name }}, This is student home page
+
         <a class="logoutbutton" href="/accounts/logout">
             <img src="https://www.vippng.com/png/detail/0-2967_png-file-svg-logout-logo-png.png">
             <div class="logout">Logout</div>
         </a>
     </div>
     <div class="form-box createC">
-         <div class="head-contianer">
-				 <div class="mainHeader-text">Register Course </div>
-		 </div>
-
-<a href="studentCourseRegister" class="addCourse-button"> Register course</a><br><br>
-{#<a href="/AddQuestions/addQuestions" class="addCourse-button"> Course </a><br><br>#}
+        <div class="head-contianer">
+            <div class="mainHeader-text">Register Course</div>
+        </div>
+        <div class="addCourse-container" style="width: 60%;margin: 50px auto;">
+            <div>Hi {{ student.first_name }}, Click on the below link to register for a course</div> <br /> <br />
+            <a href="studentCourseRegister" class="addCourse-button"> Register course</a><br><br>
+            {#<a href="/AddQuestions/addQuestions" class="addCourse-button"> Course </a><br><br>#}
+        </div>
     </div>
 </body>
 </html>
