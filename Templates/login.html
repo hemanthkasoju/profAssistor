@@ -17,7 +17,6 @@
                {% csrf_token %}
              <input type="text" class="input-field" placeholder="User ID" name="username" required><br>
              <input type="password" class="input-field" placeholder="Enter Password" name = "password" required><br><br>
-{#               <input type="checkbox" class="checkbox">Remember Password#}
              <button type="submit" class="submit-btn">Log In</button><br>
                <div>
                     {% for message in messages %}
