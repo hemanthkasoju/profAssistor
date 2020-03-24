@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_extensions',
 ]
 
 MIDDLEWARE = [
@@ -80,15 +81,15 @@ DATABASES = {
     'default': {
 
         'ENGINE': 'django.db.backends.postgresql',
-       # 'NAME': 'profAssist',
-       # 'USER':'postgres',
-       # 'PASSWORD':'0711',
-        #'HOST':'localhost',
+       'NAME': 'profAssist',
+       'USER':'postgres',
+       'PASSWORD':'0711',
+        'HOST':'localhost',
 
-         'NAME': 'profAssistor',
-         'USER':'postgres',
-         'PASSWORD':'Mohan@85',
-         'HOST':'localhost',
+         # 'NAME': 'profAssistor',
+         # 'USER':'postgres',
+         # 'PASSWORD':'Mohan@85',
+         # 'HOST':'localhost',
 
         }
 }

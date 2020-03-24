@@ -6,6 +6,7 @@ from .models import ProfessorCourses, StudentCourses
 
 def login(request):
     if request.method == 'POST':
+
         username = request.POST['username']
         password = request.POST['password']
         user = auth.authenticate(username=username, password=password, is_staff=True)
@@ -154,6 +155,6 @@ def studentCourseRegister(request):
         return render(request, "courseRegister.html")
 
 
-def studentCourseHome(request, courseID) :
+def studentCourseHome(request, courseID):
     print(courseID)
     return render(request, "studentCourseHome.html")

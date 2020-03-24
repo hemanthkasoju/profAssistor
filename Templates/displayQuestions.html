@@ -4,14 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <title>Display Questions</title>
-    <link rel="stylesheet" href="{% static 'styles/style.css' %}">
+{#    <link rel="stylesheet" href="{% static 'styles/style.css' %}">#}
 </head>
 <body>
    <div class="hero">
-
-        {% for question in questions %}
+       {% for question in questions %}
+           <input type="text", value= {{ question.question }}>
       {{ question.question }}<br><br>
       {% endfor %}
    </div>
+   <a href="/generateQuestionPaper/generatePDF">Generate PDF</a>
 </body>
 </html>
+
