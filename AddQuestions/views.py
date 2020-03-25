@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import Question
+from django.contrib import messages
+
 
 
 def addQuestions(request):
@@ -21,6 +23,7 @@ def addQuestions(request):
 
         questionData.save()
         print("Question added to database")
+        messages.info(request, 'Question added to database')
         return redirect('addQuestions')
     else:
         print("#######################")

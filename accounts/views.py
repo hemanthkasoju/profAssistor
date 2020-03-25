@@ -113,7 +113,7 @@ def studentRegister(request):
         if password == confirmPassword:
             if User.objects.filter(username=username).exists():
                 print("Username taken")
-                messages.info(request, 'Username Taken')
+                messages.info(request, 'Username taken')
                 return redirect('studentRegister')
             if User.objects.filter(email=email).exists():
                 messages.info(request, 'Email already registered')
@@ -145,13 +145,15 @@ def studentCourseRegister(request):
         if ProfessorCourses.objects.filter(courseID=courseID).exists():
 
             StudentCourses.objects.create(courseID=courseID, user_id=request.user.id)
-            print("Course added to database")
             return redirect('studentHomePage')
+
         else:
             messages.info(request, 'Course not available')
             return redirect('studentCourseRegister')
 
     else:
+        storage = messages.get_messages(request)
+        storage.used = True
         return render(request, "courseRegister.html")
 
 

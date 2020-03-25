@@ -9,31 +9,30 @@ def selectQuestionPreference(request):
     if request.method == 'POST':
         courseID = request.session.get("courseID")
         questions = Question.objects.filter(courseID=courseID)
-        time = request.POST['time']
+        # time = request.POST['time']
         difficulty = request.POST['difficulty']
         marks = request.POST['marks']
         chapter = request.POST['chapter']
         template = get_template('renderPDF.html')
         context = {
-            "questions" : questions
+            "questions" : questions,
+            "marks" : marks
         }
         html = template.render(context)
         pdf = render_to_pdf('renderPDF.html', context)
 
         return HttpResponse(pdf, content_type='application/pdf')
 
-        # return render(request, 'displayQuestions.html', {'questions': questions})
-
     else:
         print("This is get")
         return render(request, 'questionPreference.html')
 
 
-def generatePDF(request, *args, **kwargs):
-    template = get_template('renderPDF.html')
-    context = {
-        "id": 10,
-    }
-    html = template.render(context)
-    pdf = render_to_pdf('renderPDF.html', context)
-    return HttpResponse(pdf, content_type='application/pdf')
+# def generatePDF(request, *args, **kwargs):
+#     template = get_template('renderPDF.html')
+#     context = {
+#         "id": 10,
+#     }
+#     html = template.render(context)
+#     pdf = render_to_pdf('renderPDF.html', context)
+#     return HttpResponse(pdf, content_type='application/pdf')

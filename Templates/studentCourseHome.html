@@ -1,10 +1,30 @@
-<!DOCTYPE html>
+{% load static %}
+<html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Student Assignment Home Page</title>
+    <link rel="stylesheet" href="{% static 'styles/style.css' %}">
 </head>
 <body>
+<div class="hero">
+    <div class="navigation">
 
-</body>
-</html>
+        <a class="logoutbutton" href="/accounts/logout">
+            <img src="https://www.vippng.com/png/detail/0-2967_png-file-svg-logout-logo-png.png">
+            <div class="logout">Logout</div>
+        </a>
+    </div>
+    <div class="form-box createC">
+        <div class="head-contianer">
+            <div class="mainHeader-text"> Assignments </div>
+        </div>
+        <div class="addCourse-container" style="width: 60%;margin: 20px auto;">
+            <div>Hi, Student{{ student.first_name }}</div> <br />
+        </div>
+            <div class="availableCourses-heading" style="margin: 10px 0;"> List of Available Assignments</div><br><br>
+                <div class="addCourse-container" style="width: 60%;margin: 20px auto;">
+            <div>No Assignments Available</div> <br />
+            </div>
+    </div>
+</div>

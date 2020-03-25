@@ -1,7 +1,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
     <head>
-        <title>Title</title>
+        <title>Assignment</title>
         <style type="text/css">
             body {
                 font-weight: 200;
@@ -39,11 +39,11 @@
     <body>
         <div class='wrapper'>
             <div class='header'>
-                <p class='title'></p>
+                <p class='title'>Assignment</p>
+                <p class='Marks'>Total marks - {{ marks }}</p>
             </div>
-        <div class='details'>
         {% for question in questions %}
-            {{ question.question }}<br><br>
+            {{ question.question }} &nbsp {{ question.marks }} marks<br><br>
         {% endfor %}
         </div>
         </div>
