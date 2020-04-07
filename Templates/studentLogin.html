@@ -38,9 +38,11 @@
                 <input type="password" class="input-field" value=""  placeholder="Confirm Password" name="confirmPassword"required><br><br>
                 <button type="submit" class="submit-btn">Register</button><br>
                 <div>
-                      {% for message in messages %}
-                      <h3>{{message}}</h3>
-                      {% endfor %}
+                    {% if messages %}
+                        {% for message in messages %}
+                            {% if message %}  <script>alert("{{ message }}")</script> {% endif %}
+                        {% endfor %}
+                    {% endif %}
                 </div>
             </form>
           </div>

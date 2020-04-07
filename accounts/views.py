@@ -60,13 +60,22 @@ def logout(request):
 
 def createCourse(request):
     if request.method == 'POST':
-        ProfessorCourses.objects.create(courseID=request.POST['courseID'],
-                                        user_id=request.user.id,
-                                        courseName=request.POST['courseName'],
-                                        courseDescription=request.POST['description'])
 
-        print("Course added to database")
-        return redirect('profHomePage')
+        if ProfessorCourses.objects.filter(courseID=request.POST['courseID']).exists():
+
+                messages.info(request, 'Course ID already exists')
+                return redirect('createCourse')
+
+        if ProfessorCourses.objects.filter(courseName=request.POST['courseName']).exists():
+
+                messages.info(request, 'Course name already exists')
+                return redirect('createCourse')
+        else:
+            ProfessorCourses.objects.create(courseID=request.POST['courseID'],
+                                            user_id=request.user.id,
+                                            courseName=request.POST['courseName'],
+                                            courseDescription=request.POST['description'])
+            return redirect('profHomePage')
     else:
         return render(request, "createCourse.html")
 
@@ -141,6 +150,11 @@ def studentHomePage(request):
 def studentCourseRegister(request):
     if request.method == 'POST':
         courseID = request.POST['courseID']
+
+        if StudentCourses.objects.filter(courseID=courseID, user_id=request.user.id).exists():
+            print("Course already registered")
+            messages.info(request, 'Course already registered')
+            return redirect('studentCourseRegister')
 
         if ProfessorCourses.objects.filter(courseID=courseID).exists():
 

@@ -22,13 +22,15 @@
             <input type="text" class="input-field" placeholder="Course ID" name="courseID" required><br>
             <input type="text" class="input-field" placeholder="Course Name" name="courseName" required><br>
             <textarea class="input-field" placeholder="Course Description" name="description" rows="5" cols="50"
-                      required></textarea><br>
-            <input type="submit" name="Create course" class="submit-btn"> <br>
+                      required></textarea><br><br>
+            <input type="submit" name="Create course" class="submit-btn" value="Create Course"> <br>
             <div>
-                {% for message in messages %}
-                <h3>{{message}}</h3>
-                {% endfor %}
-            </div>
+                    {% if messages %}
+                        {% for message in messages %}
+                            {% if message %}  <script>alert("{{ message }}")</script> {% endif %}
+                        {% endfor %}
+                    {% endif %}
+                </div>
         </form>
 		  <div  style="text-align: center; font-weight:bold; margin-top: 25px;">
 		  {% if user.is_authenticated %}

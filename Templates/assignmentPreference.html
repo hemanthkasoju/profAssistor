@@ -2,7 +2,7 @@
 <html>
 <head>
         <meta charset="UTF-8">
-        <title>Adding Course</title>
+        <title>Assignment</title>
          <link rel="stylesheet" href="{% static 'styles/style.css' %}">
 </head>
 <body>
@@ -26,11 +26,11 @@
             <div class="head-contianer">
                 <div class="mainHeader-text">Select Preference</div>
             </div>
-            <form action='/generateQuestionPaper/selectQuestionPreference' method="post" class="input-group">
+            <form action='/generateQuestionPaper/assignmentPreference' method="post" class="input-group">
                 {% csrf_token %}
                 <div style="text-align: center; font-weight:bold; margin-top: 25px;">
                     {% if user.is_authenticated %}
-                    Hi {{ user.first_name }}, enter question paper preference
+                    Hi {{ user.first_name }}, enter assignment preference
                     {% endif %}
                 </div>
                 <div align="center" class="add-que">
@@ -42,7 +42,6 @@
                         <option value="4">Chapter-4</option>
                         <option value="5">Chapter-5</option>
                     </select>
-
                     <select name="difficulty" placeholder=" Average Difficulty" class="input-field" required>
                         <option value="" selected>Select Difficulty</option>
                         <option value="1">Very Easy</option>
