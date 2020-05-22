@@ -23,10 +23,4 @@ urlpatterns = [
     path('accounts/', include('accounts.urls')),
     path('generateQuestionPaper/', include('generateQuestionPaper.urls')),
 
-    # path('login/', login, name='login'),
-    # path('register/', register),
-    # path('logout/', logout),
-    # path('createCourse/', createCourse),
-    # path('profHomePage/', profHomePage),
-
 ]

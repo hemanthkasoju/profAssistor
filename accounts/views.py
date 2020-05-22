@@ -62,14 +62,13 @@ def createCourse(request):
     if request.method == 'POST':
 
         if ProfessorCourses.objects.filter(courseID=request.POST['courseID']).exists():
-
-                messages.info(request, 'Course ID already exists')
-                return redirect('createCourse')
+            messages.info(request, 'Course ID already exists')
+            return redirect('createCourse')
 
         if ProfessorCourses.objects.filter(courseName=request.POST['courseName']).exists():
 
-                messages.info(request, 'Course name already exists')
-                return redirect('createCourse')
+            messages.info(request, 'Course name already exists')
+            return redirect('createCourse')
         else:
             ProfessorCourses.objects.create(courseID=request.POST['courseID'],
                                             user_id=request.user.id,
